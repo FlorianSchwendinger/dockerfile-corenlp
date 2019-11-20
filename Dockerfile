@@ -1,17 +1,7 @@
 FROM java:jre-alpine
 
-ENV MEMORY 4g
-ENV PORT 9000
-ENV STATUS_PORT 9000
-ENV TIMEOUT TODO
-ENV QUIET TODO
-ENV SSL TODO
-ENV KEY TODO
-ENV USERNAME  TODO
-ENV PASSWORD TODO
-ENV ANNOTATORS TODO
-ENV PRELOAD TODO
-ENV SERVER_PROPERTIES TODO
+ENV PREARGS -mx4g
+ENV SUBARGS ""
 
 RUN apk add --update --no-cache \
 	 unzip \
@@ -29,4 +19,4 @@ ENV PORT 9000
 
 EXPOSE $PORT
 
-CMD java -cp "*" -mx${MEMORY} edu.stanford.nlp.pipeline.StanfordCoreNLPServer
+CMD java -cp "*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer ${SUBARGS}
