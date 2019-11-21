@@ -2,6 +2,7 @@ FROM java:jre-alpine
 
 ENV PREARGS -mx4g
 ENV SUBARGS ""
+ENV SERVER_PROPERTIES ""
 
 RUN apk add --update --no-cache \
 	 unzip \
@@ -19,4 +20,4 @@ ENV PORT 9000
 
 EXPOSE $PORT
 
-CMD java -cp "*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer ${SUBARGS}
+CMD echo > SERVER_PROPERTIES;java -cp "*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer -serverProperties default.properties ${SUBARGS}
