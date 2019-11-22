@@ -20,4 +20,4 @@ ENV PORT 9000
 
 EXPOSE $PORT
 
-CMD echo ${SERVER_PROPERTIES} > default.properties;java -cp "*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer -serverProperties default.properties ${SUBARGS}
+CMD printf ${SERVER_PROPERTIES} > default.properties;java -cp "*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer -serverProperties default.properties ${SUBARGS}
