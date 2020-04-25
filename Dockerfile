@@ -8,11 +8,11 @@ RUN apk add --update --no-cache \
 	 unzip \
 	 wget
 
-RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip
-RUN unzip stanford-corenlp-full-2018-10-05.zip && \
-	rm stanford-corenlp-full-2018-10-05.zip
+RUN wget http://nlp.stanford.edu/software/stanford-corenlp-4.0.0.zip
+RUN unzip stanford-corenlp-4.0.0.zip && \
+	rm stanford-corenlp-4.0.0.zip
 
-WORKDIR stanford-corenlp-full-2018-10-05
+WORKDIR stanford-corenlp-4.0.0
 
 RUN export CLASSPATH="`find . -name '*.jar'`"
 
