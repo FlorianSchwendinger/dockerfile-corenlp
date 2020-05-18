@@ -14,7 +14,7 @@ RUN unzip stanford-corenlp-4.0.0.zip && \
 
 WORKDIR stanford-corenlp-4.0.0
 
-RUN export CLASSPATH="`find . -name '*.jar'`"
+RUN for file in `find . -name "*.jar"`; do export; CLASSPATH="$CLASSPATH:`realpath $file`"; done
 
 ENV PORT 9000
 
