@@ -20,4 +20,4 @@ ENV PORT 9000
 
 EXPOSE $PORT
 
-CMD printf "${SERVER_PROPERTIES}" > default.properties;printf "\nstartup command:\njava -cp "*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer ${SUBARGS}\n\n";printf "server properties:\n${SERVER_PROPERTIES}\n\n";java -cp "*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer ${SUBARGS}
+CMD printf "${SERVER_PROPERTIES}" > default.properties;printf "\nstartup command:\njava -cp "./*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer ${SUBARGS}\n\n";printf "server properties:\n${SERVER_PROPERTIES}\n\n";java -cp "*" ${PREARGS} edu.stanford.nlp.pipeline.StanfordCoreNLPServer ${SUBARGS}
