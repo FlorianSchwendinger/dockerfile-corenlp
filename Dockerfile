@@ -9,8 +9,8 @@ RUN apk add --update --no-cache \
 	 wget
 
 RUN wget http://nlp.stanford.edu/software/stanford-corenlp-4.0.0.zip
-RUN unzip stanford-corenlp-4.0.0.zip && \
-	rm stanford-corenlp-4.0.0.zip
+RUN unzip stanford-corenlp-4.0.0.zip && rm stanford-corenlp-4.0.0.zip 
+RUN [ -d "stanford-corenlp-full-2020-04-20" ] && mv stanford-corenlp-full-2020-04-20 stanford-corenlp-4.0.0
 
 WORKDIR stanford-corenlp-4.0.0
 
